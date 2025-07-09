@@ -8,7 +8,9 @@ export const Login = () => {
     const navigate = useNavigate() ;
     const onFormSubmit = async (e) => {
         e.preventDefault() ;
+        console.log("email:", email, "password:", password); // ✅ check input
         const data = await userLogin(email ,password) ;
+         console.log("response data:", data); // ✅ check API response
         loginDispatch({
             type: 'TOKEN' ,
             payload: {
