@@ -8,13 +8,11 @@ export const ProductCard = ({ product }) => {
     const navigate = useNavigate() ; 
     const isProductInCart = findProductInCart(cart , product.id) ;
     const onCartClick = (product) => {
-        {
             !isProductInCart ? 
                 cartDispatch({
                     type: 'ADD_TO_CART',
                     payload: { product } 
                 }) : navigate('/cart')
-        }
     }
 
     return (
