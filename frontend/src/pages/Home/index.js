@@ -2,7 +2,6 @@ import { Navbar } from "../../components/Navbar";
 import { useEffect , useState } from "react" ;
 import { getAllProducts } from "../../api/getAllProducts";
 import { ProductCard } from "../../components/ProductCard";
-import { useCart } from "../../context/cart-context";
 import { getAllCategories } from "../../api/getAllCategories";
 import { getProductsByCategory } from "../../utils/getProductsByCategory";
 
@@ -11,8 +10,6 @@ export const Home = () => {
     const [products , setProducts] = useState([]) ;
     const [categories , setCategories] = useState([]) ;
     const [selectedCategory , setSelectedCategory] = useState("All") ; 
-    const { cart } = useCart() ;
-    // console.log({cart}) ;
     useEffect(() => {
         (async () => {
             const products = await getAllProducts() ;
